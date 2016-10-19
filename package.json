@@ -1,0 +1,13 @@
+{
+  "name": "telegram-random",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chance": "^1.0.4",
+    "telegraf": "^3.2.2"
+  }
+}
