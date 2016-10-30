@@ -4,10 +4,43 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "prepublish": "gulp transpile",
+    "watch": "gulp",
+    "test": "xo"
+  },
+  "babel": {
+    "presets": [
+      "es2015-node"
+    ],
+    "plugins": [
+      "transform-async-to-generator",
+      "syntax-async-functions"
+    ]
+  },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "semicolon": false,
+    "env": [
+      "node"
+    ],
+    "rules": {
+      "camelcase": 0
+    }
   },
   "dependencies": {
     "chance": "^1.0.4",
+    "next": "^1.0.2",
     "telegraf": "^3.2.2"
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-preset-es2015-node": "^6.1.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cached": "^1.1.0",
+    "xo": "^0.17.0"
   }
 }
