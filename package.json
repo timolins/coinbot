@@ -15,7 +15,8 @@
     ],
     "plugins": [
       "transform-async-to-generator",
-      "syntax-async-functions"
+      "syntax-async-functions",
+      "add-module-exports"
     ]
   },
   "xo": {
@@ -35,6 +36,7 @@
     "telegraf": "^3.2.2"
   },
   "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-preset-es2015-node": "^6.1.1",

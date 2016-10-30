@@ -1,7 +1,7 @@
 import Telegraf from 'telegraf'
-import Chance from 'chance'
 
-const chance = new Chance()
+const modes = require('./modes')
+
 const app = new Telegraf(process.env.TOKEN)
 
 const buildQuery = (title, message) => ({
@@ -17,20 +17,10 @@ const buildQuery = (title, message) => ({
 app.on('inline_query', ctx => {
   const {query} = ctx.update.inline_query
 
-  console.log(query)
-
-  const results = [
-    buildQuery('Flip a coin', `Coin flipped: *${chance.pick(['Heads', 'Tails'])}*`),
-    buildQuery('Roll a dice', `Dice rolled: *${chance.d6()}*`)
-  ]
-
-  if (query.includes(',')) {
-    const items = query.split(',')
-    const trimmedItems = items.map(item => (item.trim()))
-
-    const listQuery = buildQuery('Choose from list', `List: _${trimmedItems.join(', ')}_\n\nI choose: *${chance.pick(trimmedItems)}*`)
-    results.push(listQuery)
-  }
+  const results = modes
+  .map(mode => mode(query))
+  .filter(mode => mode && mode.enabled)
+  .map(mode => buildQuery(mode.title, mode.message))
 
   ctx.answerInlineQuery(results, {
     is_personal: true,
