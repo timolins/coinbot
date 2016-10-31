@@ -7,5 +7,5 @@ export default () => ({
   enabled: true,
   message: `Coin flipped: *${chance.pick(['Heads', 'Tails'])}*`,
   description: 'Heads or Tails',
-  icon: 'coin.png'
+  thumb: 'coin.png'
 })

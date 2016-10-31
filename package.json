@@ -1,13 +1,14 @@
 {
-  "name": "telegram-random",
+  "name": "coinbot",
   "version": "0.0.1",
   "main": "bot.js",
   "license": "MIT",
   "scripts": {
-    "start": "node bot.js",
-    "build": "gulp transpile",
+    "start": "node dist/bot.js & next start",
+    "dev": "next & npm run watch",
+    "build": "gulp transpile && next build",
     "prepublish": "npm run build",
-    "watch": "gulp",
+    "watch": "npm run build && gulp",
     "test": "xo"
   },
   "babel": {

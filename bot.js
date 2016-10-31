@@ -3,18 +3,21 @@ import Telegraf from 'telegraf'
 const app = new Telegraf(process.env.TOKEN)
 const modes = require('./modes')
 
+const url = process.env.URL || process.env.NOW_URL || ''
+
 const buildQuery = mode => {
-  const {title, message, description} = mode
+  const {title, message, description, thumb} = mode
 
   return {
     id: title,
     title,
+    description,
     type: 'article',
     input_message_content: {
       message_text: message,
       parse_mode: 'Markdown'
     },
-    description
+    thumb_url: `${url}/static/thumbs/${thumb}`
   }
 }
 
