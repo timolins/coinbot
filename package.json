@@ -1,11 +1,12 @@
 {
   "name": "telegram-random",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "main": "bot.js",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "prepublish": "gulp transpile",
+    "start": "node bot.js",
+    "build": "gulp transpile",
+    "prepublish": "npm run build",
     "watch": "gulp",
     "test": "xo"
   },
