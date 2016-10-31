@@ -1,18 +1,22 @@
 import Telegraf from 'telegraf'
 
+const app = new Telegraf(process.env.TOKEN)
 const modes = require('./modes')
 
-const app = new Telegraf(process.env.TOKEN)
+const buildQuery = mode => {
+  const {title, message, description} = mode
 
-const buildQuery = (title, message) => ({
-  id: title,
-  title,
-  type: 'article',
-  input_message_content: {
-    message_text: message,
-    parse_mode: 'Markdown'
+  return {
+    id: title,
+    title,
+    type: 'article',
+    input_message_content: {
+      message_text: message,
+      parse_mode: 'Markdown'
+    },
+    description
   }
-})
+}
 
 app.on('inline_query', ctx => {
   const {query} = ctx.update.inline_query
@@ -20,7 +24,7 @@ app.on('inline_query', ctx => {
   const results = modes
   .map(mode => mode(query))
   .filter(mode => mode && mode.enabled)
-  .map(mode => buildQuery(mode.title, mode.message))
+  .map(mode => buildQuery(mode))
 
   ctx.answerInlineQuery(results, {
     is_personal: true,
