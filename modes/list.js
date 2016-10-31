@@ -9,17 +9,15 @@ const queryToArray = query => (
   .filter(item => item !== '')
 )
 
-export default query => {
-  if (!query) {
-    return
-  }
-
+export default (query = '') => {
   const items = queryToArray(query)
+  const enabled = items.length > 1
+  const message = enabled ? `List: _${items.join(', ')}_\n\nI choose: *${chance.pick(items)}*` : ''
 
   return {
     title: 'Item from list',
-    enabled: items.length > 1,
-    message: `List: _${items.join(', ')}_\n\nI choose: *${chance.pick(items)}*`,
+    enabled,
+    message,
     description: `Random item`,
     icon: 'list.png'
   }
