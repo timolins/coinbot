@@ -5,7 +5,7 @@ import cache from 'gulp-cached'
 const paths = [
   'modes/**/*',
   'utils/**/*',
-  'index.js'
+  'bot.js'
 ]
 
 gulp.task('transpile', () => {
