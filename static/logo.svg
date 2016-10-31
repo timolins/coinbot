@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Coin</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-456.000000, -159.000000)">
+            <g id="Coin" transform="translate(456.000000, 159.000000)">
+                <circle id="Base" fill="#FFDF44" cx="50" cy="50" r="50"></circle>
+                <circle id="Circle" stroke="#6C4A00" stroke-width="5" cx="50" cy="50" r="42.5"></circle>
+                <g id="Group" transform="translate(44.000000, 42.000000)">
+                    <rect id="One-Base" fill="#6C4A00" transform="translate(5.750000, 16.500000) rotate(-90.000000) translate(-5.750000, -16.500000) " x="3.25" y="10.75" width="5" height="11.5"></rect>
+                    <polyline id="One" stroke="#6C4A00" stroke-width="5" stroke-linecap="square" points="6.27098007 15 6.27098007 0 1 2.1"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
