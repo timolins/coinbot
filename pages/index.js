@@ -12,6 +12,16 @@ const styles = {
     width: '90%',
     maxWidth: '500px',
     margin: '50px auto 0'
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 24,
+    margin: '18px 0 3px'
+  },
+  subtitle: {
+    textAlign: 'center',
+    opacity: 0.4,
+    fontWeight: 300
   }
 
 }
@@ -42,8 +52,8 @@ export default class extends React.Component {
         </Head>
         <header>
           <img src="static/logo.svg" alt="CoinBot Logo"/>
-          <div>CoinBot</div>
-          <div>for Telegram</div>
+          <div className={style(styles.title)}>CoinBot</div>
+          <div className={style(styles.subtitle)}>for Telegram</div>
         </header>
         <Modal modes={this.props.modes}/>
       </div>
