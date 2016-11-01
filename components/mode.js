@@ -31,14 +31,14 @@ const styles = {
 }
 
 export default class extends React.Component {
-  _onHover = (e) => {
-    console.log(this.props.mode.description)
+  onHover = () => {
+    this.props.onHover(this.props.mode.parameter)
   }
   render() {
     const {title, description, thumb} = this.props.mode
 
     return (
-      <div key={this.props.key} className={style(styles.mode)} onMouseOver={this._onHover}>
+      <div className={style(styles.mode)} onMouseOver={this.onHover}>
         <div className={style(styles.thumb)}>
           <img className={style(styles.thumb)} src={`static/thumbs/${thumb}`} alt={title}/>
         </div>

@@ -18,6 +18,7 @@ export default query => {
     enabled: true,
     message: `${disclaimer}Dice rolled: *${chance.integer({min: 1, max: n})}*`,
     description,
+    parameter: '[Max. number]',
     thumb: 'dice.png'
   }
 }

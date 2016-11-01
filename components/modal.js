@@ -32,8 +32,16 @@ const styles = {
 }
 
 export default class extends React.Component {
-  _onHover(e) {
-    console.log(e)
+  constructor() {
+    super()
+    this.state = {
+      parameter: ''
+    }
+  }
+  _onHover = (parameter) => {
+    this.setState({
+      parameter
+    })
   }
   render() {
     return (
@@ -41,14 +49,14 @@ export default class extends React.Component {
         <div>
           {
             this.props.modes.map(mode => (
-              <Mode mode={mode}/>
+              <Mode key={mode.title} mode={mode} onHover={this._onHover}/>
             ))
           }
         </div>
-        <a className={style(styles.link)} href="https://telegram.me/CoinBot">
+        <a className={style(styles.link)} href="https://telegram.me/coinbot">
           <div className={style(styles.message)}>
-            <span>@CoinBot</span>
-            <span className={style(styles.placeholder)}>Test</span>
+            <span>@coinbot</span>
+            <span className={style(styles.placeholder)}>{this.state.parameter}</span>
             <img className={style(styles.arrow)} src="static/arrow@2x.png" alt="Send Arrow"/>
           </div>
         </a>

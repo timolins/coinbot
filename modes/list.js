@@ -19,6 +19,7 @@ export default (query = '') => {
     enabled,
     message,
     description: `Random item`,
+    parameter: 'Item1, Item2, Item3...',
     thumb: 'list.png'
   }
 }
