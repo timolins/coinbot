@@ -1,7 +1,6 @@
 import modes from '../modes'
 
 export default app => {
-  // Command Mode
   app.command('start', ctx => {
     let message = 'I can help you make decisions with the following commands:\n\n'
 

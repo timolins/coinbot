@@ -1,11 +1,11 @@
 import modes from '../modes'
 
-const url = process.env.URL || process.env.NOW_URL || ''
+const url = process.env.URL || process.env.NOW_URL
 
 const buildAnswer = mode => {
   const {title, message, description, thumb} = mode
 
-  return {
+  const answer = {
     id: title,
     title,
     description,
@@ -13,9 +13,14 @@ const buildAnswer = mode => {
     input_message_content: {
       message_text: message,
       parse_mode: 'Markdown'
-    },
-    thumb_url: `${url}/static/thumbs/${thumb}`
+    }
   }
+
+  if (url) {
+    answer.thumb_url = `${url}/static/thumbs/${thumb}`
+  }
+
+  return answer
 }
 
 export default app => {
