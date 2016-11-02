@@ -4,7 +4,7 @@
   "main": "bot/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm start:bot & npm start:web",
+    "start": "npm run start:bot & npm run start:web",
     "start:bot": "node dist/bot/index.js",
     "start:web": "next start",
     "dev": "npm run dev:bot && npm run dev:web",
