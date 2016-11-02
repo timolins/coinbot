@@ -9,6 +9,8 @@ export default app => {
       message += `*${title}* – /${command} _${parameter || ''}_\n`
     })
 
+    message += `\nYou can also use me inline. Just type @${app.options.username} in any conversation!`
+
     ctx.reply(message, {
       parse_mode: 'Markdown'
     })
