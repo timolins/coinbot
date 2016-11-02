@@ -4,11 +4,16 @@
   "main": "bot/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/bot.js & next start",
-    "dev": "next & npm run watch",
-    "build": "gulp transpile && next build",
+    "start": "npm start:bot & npm start:web",
+    "start:bot": "node dist/bot/index.js",
+    "start:web": "next start",
+    "dev": "npm run dev:bot && npm run dev:web",
+    "dev:bot": "gulp",
+    "dev:web": "next",
+    "build": "npm run build:bot && npm run build:web",
+    "build:bot": "gulp transpile",
+    "build:web": "next build",
     "prepublish": "npm run build",
-    "watch": "npm run build && gulp",
     "test": "xo"
   },
   "babel": {
