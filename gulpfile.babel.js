@@ -5,6 +5,7 @@ import cache from 'gulp-cached'
 const paths = [
   'modes/**/*',
   'utils/**/*',
+  'bot/**/*',
   'bot.js'
 ]
 

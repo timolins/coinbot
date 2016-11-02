@@ -1,7 +1,7 @@
 {
   "name": "coinbot",
   "version": "0.0.1",
-  "main": "bot.js",
+  "main": "bot/index.js",
   "license": "MIT",
   "scripts": {
     "start": "node dist/bot.js & next start",
