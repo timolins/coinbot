@@ -5,6 +5,7 @@ const modes = require('./modes')
 
 const url = process.env.URL || process.env.NOW_URL || ''
 
+// Inline Mode
 const buildAnswer = mode => {
   const {title, message, description, thumb} = mode
 
@@ -21,7 +22,6 @@ const buildAnswer = mode => {
   }
 }
 
-// Inline Mode
 app.on('inline_query', ctx => {
   const {query} = ctx.update.inline_query
 
@@ -37,6 +37,19 @@ app.on('inline_query', ctx => {
 })
 
 // Command Mode
+app.command('start', ctx => {
+  let message = 'I can help you make decisions with the following commands:\n\n'
+
+  modes.forEach(mode => {
+    const {title, command, parameter} = mode()
+    message += `*${title}* – /${command} _${parameter || ''}_\n`
+  })
+
+  ctx.reply(message, {
+    parse_mode: 'Markdown'
+  })
+})
+
 modes.forEach(mode => {
   const m = mode()
   app.command(m.command, ctx => {
@@ -44,9 +57,14 @@ modes.forEach(mode => {
     const index = text.trim().indexOf(' ')
     const query = index > 0 ? text.substr(index + 1) : ''
 
-    const {message} = mode(query)
+    const {message, parameterRequired, command, parameter} = mode(query)
 
-    ctx.reply(message, {
+    let parameterMessage
+    if (parameterRequired && !query) {
+      parameterMessage = `A parameter is required to use this command.\n\nExample: /${command} _${parameter}_`
+    }
+
+    ctx.reply(parameterMessage || message, {
       parse_mode: 'Markdown'
     })
   })
