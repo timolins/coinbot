@@ -25,8 +25,6 @@ export default app => {
 
       const {message, enabled, trigger, parameter} = command(query)
 
-
-      console.log(enabled)
       let parameterMessage
       if (!enabled) {
         parameterMessage = `The parameter you supplied is invalid.\n\nExample usage: /${trigger} _${parameter}_`
