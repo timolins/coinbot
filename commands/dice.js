@@ -19,7 +19,7 @@ export default query => {
     enabled: true,
     message: `${disclaimer}Dice rolled: *${chance.integer({min: 1, max: n})}*`,
     description,
-    parameter: '[Max. number]',
+    parameter: '[Sides of the dice]',
     thumb: 'dice.png'
   }
 }

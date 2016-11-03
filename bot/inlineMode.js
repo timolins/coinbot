@@ -16,7 +16,7 @@ const buildAnswer = command => {
     }
   }
 
-  if (url) {
+  if (url && thumb) {
     answer.thumb_url = `${url}/static/thumbs/${thumb}`
   }
 

@@ -23,11 +23,13 @@ export default app => {
       const index = text.trim().indexOf(' ')
       const query = index > 0 ? text.substr(index + 1) : ''
 
-      const {message, parameterRequired, trigger, parameter} = command(query)
+      const {message, enabled, trigger, parameter} = command(query)
 
+
+      console.log(enabled)
       let parameterMessage
-      if (parameterRequired && !query) {
-        parameterMessage = `A parameter is required to use this command.\n\nExample: /${trigger} _${parameter}_`
+      if (!enabled) {
+        parameterMessage = `The parameter you supplied is invalid.\n\nExample usage: /${trigger} _${parameter}_`
       }
 
       ctx.reply(parameterMessage || message, {

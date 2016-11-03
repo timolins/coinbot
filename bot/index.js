@@ -1,11 +1,11 @@
 import Telegraf from 'telegraf'
 
-import commandMode from './commandMode'
+import chatMode from './chatMode'
 import inlineMode from './inlineMode'
 
 const app = new Telegraf(process.env.TOKEN)
 
-commandMode(app)
+chatMode(app)
 inlineMode(app)
 
 app.telegram.getMe().then(bot => {

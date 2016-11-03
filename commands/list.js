@@ -19,9 +19,8 @@ export default (query = '') => {
     trigger: 'list',
     enabled,
     message,
-    description: `Random item`,
+    description: 'Random item',
     parameter: 'Item1, Item2, ...',
-    parameterRequired: true,
     thumb: 'list.png'
   }
 }
