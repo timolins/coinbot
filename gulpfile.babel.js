@@ -1,6 +1,10 @@
+import {spawn} from 'child_process'
+
 import gulp from 'gulp'
 import babel from 'gulp-babel'
 import cache from 'gulp-cached'
+
+let node;
 
 const paths = [
   'commands/**/*',
@@ -15,8 +19,20 @@ gulp.task('transpile', () => {
   .pipe(gulp.dest('dist'))
 })
 
-gulp.task('watch', () => {
-  return gulp.watch(paths, ['transpile'])
+gulp.task('server', () => {
+  if (node) {
+    node.kill()
+  }
+  node = spawn('node', ['dist/bot/index.js'], {stdio: 'inherit'})
+  node.on('close', code => {
+    if (code === 8) {
+      gulp.log('Error detected, waiting for changes...')
+    }
+  })
 })
 
-gulp.task('default', ['transpile', 'watch'])
+gulp.task('watch', () => {
+  return gulp.watch(paths, ['transpile', 'server'])
+})
+
+gulp.task('default', ['transpile', 'watch', 'server'])
