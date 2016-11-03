@@ -1,7 +1,7 @@
 import Telegraf from 'telegraf'
 
-import chatMode from './chatMode'
-import inlineMode from './inlineMode'
+import chatMode from './chat-mode'
+import inlineMode from './inline-mode'
 
 const app = new Telegraf(process.env.TOKEN)
 
