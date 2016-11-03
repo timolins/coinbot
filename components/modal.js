@@ -1,7 +1,7 @@
 import React from 'react'
 import {style} from 'next/css'
 
-import Mode from './mode'
+import Command from './command'
 
 const styles = {
   modal: {
@@ -48,8 +48,8 @@ export default class extends React.Component {
       <div className={style(styles.modal)}>
         <div>
           {
-            this.props.modes.map(mode => (
-              <Mode key={mode.title} mode={mode} onHover={this._onHover}/>
+            this.props.commands.map(command => (
+              <Command key={command.title} command={command} onHover={this._onHover}/>
             ))
           }
         </div>

@@ -3,10 +3,9 @@ import babel from 'gulp-babel'
 import cache from 'gulp-cached'
 
 const paths = [
-  'modes/**/*',
+  'commands/**/*',
   'utils/**/*',
-  'bot/**/*',
-  'bot.js'
+  'bot/**/*'
 ]
 
 gulp.task('transpile', () => {

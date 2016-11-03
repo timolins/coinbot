@@ -15,7 +15,7 @@ export default query => {
 
   return {
     title: 'Roll a dice',
-    command: 'dice',
+    trigger: 'dice',
     enabled: true,
     message: `${disclaimer}Dice rolled: *${chance.integer({min: 1, max: n})}*`,
     description,

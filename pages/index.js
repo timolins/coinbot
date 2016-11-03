@@ -2,7 +2,7 @@ import React from 'react'
 import {insertRule, style} from 'next/css'
 import Head from 'next/head'
 
-import modes from '../modes'
+import commands from '../commands'
 
 import Modal from '../components/modal'
 
@@ -52,7 +52,7 @@ insertRule(`
 export default class extends React.Component {
   static getInitialProps() {
     return {
-      modes: modes.map(mode => mode())
+      commands: commands.map(command => command())
     }
   }
 
@@ -68,7 +68,7 @@ export default class extends React.Component {
           <div className={style(styles.title)}>CoinBot</div>
           <div className={style(styles.subtitle)}>for Telegram</div>
         </header>
-        <Modal modes={this.props.modes}/>
+        <Modal commands={this.props.commands}/>
         <footer className={style(styles.footer)}>
           <div>Source available on <a className={style(styles.link)} href="https://github.com/timolins/coinbot">GitHub</a>.</div>
           <div>Built by <a className={style(styles.link)} href="https://timo.sh">Timo Lins</a>.  Hosted on <a className={style(styles.link)} href="https://zeit.co/now">now</a>.</div>

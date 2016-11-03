@@ -16,7 +16,7 @@ export default (query = '') => {
 
   return {
     title: 'Item from list',
-    command: 'list',
+    trigger: 'list',
     enabled,
     message,
     description: `Random item`,

@@ -3,7 +3,7 @@ import {style, merge} from 'next/css'
 
 
 const styles = {
-  mode: {
+  command: {
     padding: 10,
     borderBottom: '1px solid #eee',
     fontWeight: 400,
@@ -32,13 +32,13 @@ const styles = {
 
 export default class extends React.Component {
   onHover = () => {
-    this.props.onHover(this.props.mode.parameter)
+    this.props.onHover(this.props.command.parameter)
   }
   render() {
-    const {title, description, thumb} = this.props.mode
+    const {title, description, thumb} = this.props.command
 
     return (
-      <div className={style(styles.mode)} onMouseOver={this.onHover}>
+      <div className={style(styles.command)} onMouseOver={this.onHover}>
         <div className={style(styles.thumb)}>
           <img className={style(styles.thumb)} src={`static/thumbs/${thumb}`} alt={title}/>
         </div>

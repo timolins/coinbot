@@ -4,7 +4,7 @@ const chance = new Chance()
 
 export default () => ({
   title: 'Flip a coin',
-  command: 'coin',
+  trigger: 'coin',
   enabled: true,
   message: `Coin flipped: *${chance.pick(['Heads', 'Tails'])}*`,
   description: 'Heads or Tails',

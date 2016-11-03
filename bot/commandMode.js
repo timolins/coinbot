@@ -1,12 +1,12 @@
-import modes from '../modes'
+import commands from '../commands'
 
 export default app => {
   app.command('start', ctx => {
     let message = 'I can help you make decisions with the following commands:\n\n'
 
-    modes.forEach(mode => {
-      const {title, command, parameter} = mode()
-      message += `*${title}* – /${command} _${parameter || ''}_\n`
+    commands.forEach(command => {
+      const {title, trigger, parameter} = command()
+      message += `*${title}* – /${trigger} _${parameter || ''}_\n`
     })
 
     message += `\nYou can also use me inline. Just type @${app.options.username} in any conversation!`
@@ -16,18 +16,18 @@ export default app => {
     })
   })
 
-  modes.forEach(mode => {
-    const m = mode()
-    app.command(m.command, ctx => {
+  commands.forEach(command => {
+    const c = command()
+    app.command(c.trigger, ctx => {
       const {text} = ctx.update.message
       const index = text.trim().indexOf(' ')
       const query = index > 0 ? text.substr(index + 1) : ''
 
-      const {message, parameterRequired, command, parameter} = mode(query)
+      const {message, parameterRequired, trigger, parameter} = command(query)
 
       let parameterMessage
       if (parameterRequired && !query) {
-        parameterMessage = `A parameter is required to use this command.\n\nExample: /${command} _${parameter}_`
+        parameterMessage = `A parameter is required to use this command.\n\nExample: /${trigger} _${parameter}_`
       }
 
       ctx.reply(parameterMessage || message, {

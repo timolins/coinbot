@@ -1,9 +1,9 @@
-import modes from '../modes'
+import commands from '../commands'
 
 const url = process.env.URL || process.env.NOW_URL
 
-const buildAnswer = mode => {
-  const {title, message, description, thumb} = mode
+const buildAnswer = command => {
+  const {title, message, description, thumb} = command
 
   const answer = {
     id: title,
@@ -27,10 +27,10 @@ export default app => {
   app.on('inline_query', ctx => {
     const {query} = ctx.update.inline_query
 
-    const results = modes
-    .map(mode => mode(query))
-    .filter(mode => mode && mode.enabled)
-    .map(mode => buildAnswer(mode))
+    const results = commands
+    .map(command => command(query))
+    .filter(command => command && command.enabled)
+    .map(command => buildAnswer(command))
 
     ctx.answerInlineQuery(results, {
       is_personal: true,
