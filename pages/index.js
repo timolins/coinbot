@@ -28,7 +28,7 @@ const styles = {
   },
   footer: {
     fontSize: 12,
-    marginTop: 5,
+    margin: '5px 0 20px',
     lineHeight: 1.8,
     color: 'rgb(100,100,100)'
   },
