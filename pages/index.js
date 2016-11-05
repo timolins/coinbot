@@ -74,6 +74,7 @@ export default class extends React.Component {
         <Head>
           <title>CoinBot</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
         </Head>
         <header className={style(styles.header)}>
           <img src="static/logo.svg" alt="CoinBot Logo"/>
