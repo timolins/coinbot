@@ -35,6 +35,18 @@ const styles = {
   link: {
     color: 'white',
     textDecoration: 'none'
+  },
+  button: {
+    background: '#54b3e6',
+    display: 'inline-block',
+    padding: '10px 20px',
+    borderRadius: 3,
+    color: 'white',
+    textDecoration: 'none',
+    marginTop: 20,
+    ':hover': {
+      background: '#0088cc'
+    }
   }
 
 }
@@ -67,6 +79,9 @@ export default class extends React.Component {
           <img src="static/logo.svg" alt="CoinBot Logo"/>
           <div className={style(styles.title)}>CoinBot</div>
           <div className={style(styles.subtitle)}>for Telegram</div>
+          <a href="https://telegram.me/coinbot">
+            <div className={style(styles.button)}>TRY IT NOW</div>
+          </a>
         </header>
         <Modal commands={this.props.commands}/>
         <footer className={style(styles.footer)}>
