@@ -32,17 +32,6 @@ const styles = {
 }
 
 export default class extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      parameter: ''
-    }
-  }
-  _onHover = (parameter) => {
-    this.setState({
-      parameter
-    })
-  }
   render() {
     return (
       <div className={style(styles.modal)}>
@@ -56,7 +45,6 @@ export default class extends React.Component {
         <a className={style(styles.link)} href="https://telegram.me/coinbot">
           <div className={style(styles.message)}>
             <span>@coinbot</span>
-            <span className={style(styles.placeholder)}>{this.state.parameter}</span>
             <img className={style(styles.arrow)} src="static/arrow@2x.png" alt="Send Arrow"/>
           </div>
         </a>

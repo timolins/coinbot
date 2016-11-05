@@ -77,5 +77,5 @@ export default query => ({
 | `enabled` | `Boolean` | YES | If `false` the command will be hidden from inline mode and return an error in chat mode. This is useful if your command only works with a certain `query`. |
 | `message` | `String` | YES | The result of the command. This will be returned when it runs. |
 | `description` | `String` | YES | Description for the website, `/start` and inline mode. |
-| `parameter` | `String` | - | Example parameter. Should be in brackets if it's optional. Will be displayed on the website and if `enabled` is set to false |
+| `parameter` | `String` | - | Example parameter. Should be in brackets if it's optional. Will be displayed if `enabled` is set to false |
 | `thumb` | `String` | - | Thumbnail for inline mode and website. Image should be placed inside `static/thumbs/` |
