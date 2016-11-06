@@ -40,7 +40,7 @@ CoinBot was built with extensibility in mind. That's why it is based on the foll
 
 After you cloned the repository to your computer, you can **run it** with `npm run dev`\*.
 
-This command will start the bot itself AND the website on port 3000. It's also possible to start only one of them with either `npm run dev:bot` or `npm run dev:bot`.
+This command will start the bot itself AND the website on port 3000. It's also possible to start only one of them with either `npm run dev:bot` or `npm run dev:web`.
 
 _\* You have to set the environment variable `TOKEN` to your Telgram Bot Token in order for it to work. You can obtain it from the [BotFather](https://telegram.me/BotFather)._
 
