@@ -1,7 +1,7 @@
 {
   "name": "coinbot",
   "description": "Random decisions for Telegram",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "bot/index.js",
   "license": "MIT",
   "author": "Timo Lins <me@timo.sh>",
