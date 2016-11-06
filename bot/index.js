@@ -5,8 +5,8 @@ import inlineMode from './inline-mode'
 
 const app = new Telegraf(process.env.TOKEN)
 
-chatMode(app)
-inlineMode(app)
+app.use(chatMode)
+app.use(inlineMode)
 
 app.telegram.getMe().then(bot => {
   const {username} = bot

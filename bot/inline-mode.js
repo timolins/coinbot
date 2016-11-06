@@ -1,3 +1,4 @@
+import { mount } from 'telegraf'
 import commands from '../commands'
 
 const url = process.env.URL || process.env.NOW_URL
@@ -23,18 +24,16 @@ const buildAnswer = command => {
   return answer
 }
 
-export default app => {
-  app.on('inline_query', ctx => {
-    const {query} = ctx.update.inline_query
+export default mount('inline_query', ctx => {
+  const {query} = ctx.inlineQuery
 
-    const results = commands
-    .map(command => command(query))
-    .filter(command => command && command.enabled)
-    .map(command => buildAnswer(command))
+  const results = commands
+  .map(command => command(query))
+  .filter(command => command && command.enabled)
+  .map(command => buildAnswer(command))
 
-    ctx.answerInlineQuery(results, {
-      is_personal: true,
-      cache_time: 0
-    })
+  ctx.answerInlineQuery(results, {
+    is_personal: true,
+    cache_time: 0
   })
-}
+})
