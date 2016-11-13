@@ -52,7 +52,7 @@
     "babel-preset-es2015-node": "^6.1.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-cached": "^1.1.0",
+    "gulp-cached": "^1.1.1",
     "xo": "^0.17.0"
   }
 }
