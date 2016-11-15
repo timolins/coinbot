@@ -19,6 +19,13 @@
     "prepublish": "npm run build",
     "test": "xo"
   },
+  "hyperlayout": {
+    "entry": "vertical",
+    "layout": [
+      "dotenv npm run start:bot",
+      "npm run start:web"
+    ]
+  },
   "babel": {
     "presets": [
       "es2015-node"

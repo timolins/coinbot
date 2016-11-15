@@ -4,7 +4,7 @@ import gulp from 'gulp'
 import babel from 'gulp-babel'
 import cache from 'gulp-cached'
 
-let node;
+let node
 
 const paths = [
   'commands/**/*',
