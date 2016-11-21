@@ -30,7 +30,7 @@ _Inline:_
 
 ## Development
 
-CoinBot was built with extensibility in mind. That's why it is based on the following principles and technologies:
+CoinBot was built with extensibility in mind. That's why it's based on the following principles and technologies:
 
 * Based on [Telegraf](https://github.com/telegraf/telegraf) – A **modern** framework for Telegram bots.
 * Commands are **modular** – They are split into individual files and work inside the chat & inline on the fly.
@@ -46,7 +46,7 @@ _\* You have to set the environment variable `TOKEN` to your Telgram Bot Token i
 
 #### Run it in production
 
-Same rules apply as above, but for an production environment I suggest to use `npm run build` and `npm start`. `:bot` and `:web` can also be applied on those two commands.
+Same rules apply as above, but for a production environment I suggest to use `npm run build` and `npm start`. `:bot` and `:web` can also be applied on those two commands.
 
 
 ### Writing a new command
