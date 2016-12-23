@@ -17,7 +17,13 @@
     "build:bot": "gulp transpile",
     "build:web": "next build",
     "prepublish": "npm run build",
+    "deploy": "now --alias coinbot.timo.sh",
     "test": "xo"
+  },
+  "now": {
+    "env": {
+      "TOKEN": "@coinbot-token"
+    }
   },
   "hyperlayout": {
     "entry": "vertical",
