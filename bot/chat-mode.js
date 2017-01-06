@@ -1,9 +1,9 @@
-import { Composer } from 'telegraf'
+import {Composer} from 'telegraf'
 import commands from '../commands'
 
 const composer = new Composer()
 
-composer.command('start', ctx => {
+composer.command(['start', 'help'], ctx => {
   let message = 'I can help you make decisions with the following commands:\n\n'
 
   commands.forEach(command => {
@@ -11,7 +11,7 @@ composer.command('start', ctx => {
     message += `*${title}* – /${trigger} _${parameter || ''}_\n`
   })
 
-  message += `\nYou can also use me inline. Just type @${ctx.telegram.options.username} in any conversation!`
+  message += `\nYou can also use me inline. Just type @coinbot in any conversation!`
 
   ctx.reply(message, {
     parse_mode: 'Markdown'

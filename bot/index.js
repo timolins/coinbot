@@ -8,8 +8,7 @@ const app = new Telegraf(process.env.TOKEN)
 app.use(chatMode)
 app.use(inlineMode)
 
-app.telegram.getMe().then(bot => {
-  const {username} = bot
+app.telegram.getMe().then(({username}) => {
   console.log(`${username} is running!`)
   app.options.username = username
 })
