@@ -56,7 +56,7 @@
   "dependencies": {
     "chance": "^1.0.4",
     "next": "latest",
-    "telegraf": "^3.3.0"
+    "telegraf": "^3.6.5"
   },
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
