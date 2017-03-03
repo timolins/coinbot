@@ -17,10 +17,14 @@
     "build:bot": "gulp transpile",
     "build:web": "next build",
     "prepublish": "npm run build",
-    "deploy": "now --alias coinbot.timo.sh",
+    "deploy": "now -p && now alias",
     "test": "xo"
   },
   "now": {
+    "alias": [
+      "coinbot.timo.sh",
+      "coinbot.now.sh"
+    ],
     "env": {
       "TOKEN": "@coinbot-token"
     }
