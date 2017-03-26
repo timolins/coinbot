@@ -6,6 +6,6 @@ import rps from './rock-paper-scissors'
 export default [
   coin,
   dice,
-  rps,
-  list
+  list,
+  rps
 ]
