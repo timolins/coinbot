@@ -65,7 +65,7 @@
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-syntax-async-functions": "^6.13.0",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-es2015-node": "^6.1.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
