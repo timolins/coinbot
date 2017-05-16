@@ -2,7 +2,7 @@
 
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-[CoinBot](https://telegram.me/coinbot) is a tiny bot for Telegram, that helps you with random decisions. It works inline and inside the chat.
+[CoinBot](https://telegram.me/coinbot) is a tiny, rigged bot for Telegram, that helps you with random decisions. It works inline and inside the chat.
 
 ## Usage
 
