@@ -58,7 +58,7 @@
     }
   },
   "dependencies": {
-    "chance": "^1.0.4",
+    "chance": "^1.0.11",
     "next": "latest",
     "telegraf": "^3.3.0"
   },
