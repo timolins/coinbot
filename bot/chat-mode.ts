@@ -14,6 +14,8 @@ composer.command(["start", "help"], (ctx) => {
 
   message += `\nYou can also use me inline. Just type @coinbot in any conversation!`;
 
+  message += `\n\nIf you need help or want to reach out, email me at coinbot@sent.com`;
+
   ctx.reply(message, {
     parse_mode: "Markdown",
   });
